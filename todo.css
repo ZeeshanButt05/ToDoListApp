@@ -1,0 +1,223 @@
+/* Existing styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff; /* Default light mode background */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* For absolute positioning of the plus button */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Header Row Styles */
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-icon {
+    position: absolute;
+    margin-left: 10px;
+    color: #007bff;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    color: #007bff;
+}
+
+.theme-toggle i:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 60px; /* Space for the add button */
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+li button.delete {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+}
+
+li button.delete:hover {
+    color: #cc0000;
+}
+
+.dark-mode {
+    background-color: rgb(0, 64, 26);
+    color: white;
+}
+
+.dark-mode .container {
+    background-color: rgb(0, 64, 26);
+}
+
+.dark-mode h1, .dark-mode input[type="text"], .dark-mode select {
+    background-color: rgb(0, 64, 26);
+    color: white;
+    border: 1px solid white;
+}
+
+.dark-mode .theme-toggle i {
+    color: white;
+}
+
+.dark-mode .theme-toggle i.fa-moon {
+    color: #fff;
+}
+
+.dark-mode li {
+    border: 1px solid white;
+}
+
+.dark-mode li button.delete {
+    color: #ff4d4d;
+}
+
+.dark-mode li button.delete:hover {
+    color: #cc0000;
+}
+
+/* Add Task Button Styles */
+.add-task-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 36px;
+    color: #007bff;
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+.add-task-btn:hover {
+    color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.close-btn:hover {
+    color: #00b345;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Add Task Form Button Styles */
+#taskForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-task-form-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.add-task-form-btn:hover {
+    color: #0056b3;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: #00b345;
+}
