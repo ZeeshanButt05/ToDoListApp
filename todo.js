@@ -24,14 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
     function addTaskToDOM(task) {
         const li = document.createElement('li');
         li.innerHTML = `
-            <input type="checkbox" ${task.completed ? 'checked' : ''} > 
-            <span class=${task.completed ? 'completed' : ''}>${task.text}</span>
-            <button class="delete">Delete</button>
-        `;
+
+        <input class="chec" type="checkbox" ${task.completed ? 'checked' : ''}> 
+        <span class="${task.completed ? 'completed' : ''}" >${task.text}</span>
+        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+    `;
         taskList.appendChild(li);
 
-        li.querySelector('input[type="checkbox"]').addEventListener('change', function () {
+        const checkbox = li.querySelector('input[type="checkbox"]');
+        const span = li.querySelector('span');
+
+        checkbox.addEventListener('change', function () {
             task.completed = this.checked;
+            if (task.completed) {
+                span.classList.add('completed');
+            } else {
+                span.classList.remove('completed');
+            }
             saveTasks(getTasksFromDOM());
         });
 
@@ -40,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             saveTasks(getTasksFromDOM());
         });
     }
+
 
     function getTasksFromDOM() {
         return Array.from(taskList.children).map(li => {
